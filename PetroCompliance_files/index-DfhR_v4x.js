@@ -285,20 +285,20 @@ d=`${(a=r.appBaseUrl)!==null&&a!==void 0?a:""
 window.location.href=d},*/
 logout(i){if(delete e.defaults.headers.common.Authorization,typeof window<"u"&&window.localStorage)try{window.localStorage.removeItem("base44_access_token"),window.localStorage.removeItem("token")}
 catch(a){console.error("Failed to remove token from localStorage:",a)}typeof window<"u"&&(i?window.location.href=i:window.location.reload())},
-setToken(i,a=!0){if(i&&(e.defaults.headers.common.Authorization=`Bearer ${i}`,t.defaults.headers.common.Authorization=`Bearer ${i}`,a&&typeof window<"u"&&window.localStorage))
+/*setToken(i,a=!0){if(i&&(e.defaults.headers.common.Authorization=`Bearer ${i}`,t.defaults.headers.common.Authorization=`Bearer ${i}`,a&&typeof window<"u"&&window.localStorage))
 try{window.localStorage.setItem("base44_access_token",i),window.localStorage.setItem("token",i)}
-catch(l){console.error("Failed to save token to localStorage:",l)}},
-async loginViaEmailPassword(i,a,l){
+catch(l){console.error("Failed to save token to localStorage:",l)}},*/
+/*async loginViaEmailPassword(i,a,l){
 	var d;
 	try{const h=await e.post(`/apps/${n}/auth/login`,
-		{email:"katlegoalcoshiabokamoso@gmail.com",password:"3?BLQmYrp&w2WT?",...l&&{turnstile_token:l}}),
+		{email:i,password:a,...l&&{turnstile_token:l}}),
 {access_token:m,user:p}=h;
 return m&&this.setToken(m),{access_token:m,user:p}}
 catch(h){
 throw((d=h.response)===null||d===void 0?void 0:d.status)===401&&await this.logout(),
 h
  }
-},
+},*/
 async isAuthenticated(){
 try{
 return await this.me(),!0}catch{return!1}},
