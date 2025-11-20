@@ -10,7 +10,7 @@
   </title>
         <script crossorigin="" src="./PetroCompliance - regw_files/index-DfhR_v4x.js" type="module"></script>
         <link crossorigin="" href="./PetroCompliance - regw_files/index-Bwue-oE7.css" rel="stylesheet">
-        <script async="true" data-app-id="691276f1b49376b22d5fb3e1" data-platform-url="https://app.base44.com" src="./PetroCompliance - regw_files/badge.js"></script>
+        <!--<script async="true" data-app-id="691276f1b49376b22d5fb3e1" data-platform-url="https://app.base44.com" src="./PetroCompliance - regw_files/badge.js"></script>-->
         <style>
             @keyframes badge-spin {
                 from {
@@ -2005,81 +2005,165 @@
                                     </div>
                                 </div>-->
                                 <form>
-                                    <div class="rounded-xl border bg-card text-card-foreground mb-6 shadow-lg">
-                                        <div class="flex flex-col space-y-1.5 p-6 bg-gradient-to-r from-[#1e3a5f] to-[#2d5f3f] text-white">
-                                            <div class="font-semibold leading-none tracking-tight">Company Information</div>
+<div class="rounded-xl border bg-card text-card-foreground mb-6 shadow-lg">
+<div class="flex flex-col space-y-1.5 p-6 bg-gradient-to-r from-[#1e3a5f] to-[#2d5f3f] text-white">
+<div class="font-semibold leading-none tracking-tight">Licensee's Particulars</div>
                                         </div>
-                                        <div class="p-6 space-y-6">
-                                            <div class="grid md:grid-cols-2 gap-6">
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="company_name">Company Name *</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="company_name" required="" value="">
+<div class="p-6 space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="company_name">Company Name *</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="company_name" required="">
                                                 </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="trade_name">Trade Name *</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="trade_name" required="" value="">
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="trade_name">Trade Name *</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="trade_name" required="" value="">
                                                 </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="registration_number">Registration Number</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="registration_number" value="">
+                                            </div>
+<div class="grid md:grid-cols-3 gap-6">
+    <div class="custom-select-wrapper">
+  <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="salute-custom-button">Title of Signee *</label>
+
+  <!-- This is the visual button that acts as the custom select trigger -->
+  <button
+    id="salute-custom-button"
+    type="button"
+    role="combobox"
+    aria-controls="salute-options-list"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="salute-custom-button-label"
+    class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
+  >
+    <span id="salute-custom-button-label" style="pointer-events: none;">Mr</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+      <path d="m6 9 6 6 6-6"></path>
+    </svg>
+  </button>
+
+  <!-- This is the actual select element, kept hidden but updated by the custom select -->
+  <select id="salute" class="sr-only" aria-hidden="true" tabindex="-1" style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;">
+    <option value="Mr" selected>Mr</option>
+    <option value="Mrs">Mrs</option>
+    <option value="Ms">Ms</option>
+    <option value="Dr">Dr</option>
+    <option value="Prof">Prof</option>
+  </select>
+
+  <!-- This is the custom dropdown list that appears -->
+  <ul
+    id="salute-options-list"
+    role="listbox"
+    tabindex="-1"
+    class="custom-select-dropdown hidden"
+    aria-activedescendant=""
+  >
+    <li role="option" data-value="Mr" class="custom-select-option selected" tabindex="0">Mr</li>
+    <li role="option" data-value="Mrs" class="custom-select-option" tabindex="0">Mrs</li>
+    <li role="option" data-value="Ms" class="custom-select-option" tabindex="0">Ms</li>
+    <li role="option" data-value="Dr" class="custom-select-option" tabindex="0">Dr</li>
+    <li role="option" data-value="Prof" class="custom-select-option" tabindex="0">Prof</li>
+  </ul>
+</div>
+<!--<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="signee_title">Title of Signee *</label>
+<button type="button" role="combobox" aria-controls="radix-:r4:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1">
+<span style="pointer-events: none;">Mr</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+<path d="m6 9 6 6 6-6"></path>
+                                                        </svg>
+                                                    </button>
+<select id="salute" aria-hidden="true" tabindex="-1" style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;">
+<option value="Mr" selected="">Mr</option>
+<option value="Mrs">Mrs</option>
+<option value="Ms">Ms</option>
+<option value="Dr">Dr</option>
+<option value="Prof">Prof</option>
+                                                    </select>
+                                                </div>-->
+ <div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="signee_family_name">Family Name of Signee *</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="signee_family_name" required="" value="">
                                                 </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="signee_name">Signee Name *</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="signee_name" required="" value="">
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="signee_name">Name of Signee *</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="signee_name" required="" value="">
                                                 </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="signee_id_number">Signee ID Number</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="signee_id_number" value="">
+                                            </div>
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="registration_number">Registration Number</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="registration_number" value="">
+                                                </div>
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="signee_id_number">ID Number *</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="signee_id_number" required="" value="">
+                                            </div>
+<!--<div class="space-y-4">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Is there a change in licensee's particulars?</label>
+<div role="radiogroup" aria-required="false" dir="ltr" class="grid gap-2" tabindex="0" style="outline: none;">
+<div class="flex items-center space-x-2">
+<button type="button" role="radio" aria-checked="true" data-state="checked" value="false" class="aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" id="no-change" tabindex="-1" data-radix-collection-item="">
+<span data-state="checked" class="flex items-center justify-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle h-3.5 w-3.5 fill-primary">
+                                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                                </svg>
+                                                            </span>
+                                                        </button>
+                                                        <input type="radio" aria-hidden="true" tabindex="-1" value="false" checked="" style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px; width: 16px; height: 16px;">
+                                                        <label class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-normal" for="no-change">No</label>
+                                                    </div>
+                                                    <div class="flex items-center space-x-2">
+                                                        <button type="button" role="radio" aria-checked="false" data-state="unchecked" value="true" class="aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" id="yes-change" tabindex="-1" data-radix-collection-item=""></button>
+                                                        <input type="radio" aria-hidden="true" tabindex="-1" value="true" style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px; width: 16px; height: 16px;">
+                                                        <label class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-normal" for="yes-change">Yes</label>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                        </div>
+                                    </div>
+<div class="rounded-xl border bg-card text-card-foreground mb-6 shadow-lg">
+<div class="flex flex-col space-y-1.5 p-6 bg-gradient-to-r from-[#2d5f3f] to-[#1e3a5f] text-white">
+<div class="font-semibold leading-none tracking-tight">Contact Information</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2 md:col-span-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="postal_address">Postal Address</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="postal_address" value="">
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="postal_code">Postal Code</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="postal_code" value="">
+                                                </div>
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="business_tel">Business Telephone</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="business_tel" value="">
+                                                </div>
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="mobile_phone">Mobile Phone</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="mobile_phone" value="">
+                                                </div>
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email_address">Email Address</label>
+<input type="email" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="email_address" value="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl border bg-card text-card-foreground mb-6 shadow-lg">
-                                        <div class="flex flex-col space-y-1.5 p-6 bg-gradient-to-r from-[#2d5f3f] to-[#1e3a5f] text-white">
-                                            <div class="font-semibold leading-none tracking-tight">Contact Information</div>
+<div class="rounded-xl border bg-card text-card-foreground mb-6 shadow-lg">
+<div class="flex flex-col space-y-1.5 p-6 bg-gradient-to-r from-[#1e3a5f] to-[#2d5f3f] text-white">
+<div class="font-semibold leading-none tracking-tight">Facility Details</div>
                                         </div>
-                                        <div class="p-6 space-y-6">
-                                            <div class="grid md:grid-cols-2 gap-6">
-                                                <div class="space-y-2 md:col-span-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="postal_address">Postal Address</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="postal_address" value="">
+<div class="p-6 space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="space-y-2">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="storage_capacity">Storage Capacity (Liters)</label>
+<input type="number" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="storage_capacity" value="0">
                                                 </div>
                                                 <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="postal_code">Postal Code</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="postal_code" value="">
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="business_tel">Business Telephone</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="business_tel" value="">
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="mobile_phone">Mobile Phone</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="mobile_phone" value="">
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email_address">Email Address</label>
-                                                    <input type="email" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="email_address" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rounded-xl border bg-card text-card-foreground mb-6 shadow-lg">
-                                        <div class="flex flex-col space-y-1.5 p-6 bg-gradient-to-r from-[#1e3a5f] to-[#2d5f3f] text-white">
-                                            <div class="font-semibold leading-none tracking-tight">Facility Details</div>
-                                        </div>
-                                        <div class="p-6 space-y-6">
-                                            <div class="grid md:grid-cols-2 gap-6">
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="warehouse_location">Warehouse Location</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="warehouse_location" value="">
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="province">Province</label>
-                                                    <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="province" value="">
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="storage_capacity">Storage Capacity (Liters)</label>
-                                                    <input type="number" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="storage_capacity" value="0">
+<label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="wholesale_licence_number">Wholesale Licence Number</label>
+<input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="wholesale_licence_number" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -2131,45 +2215,66 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const db = getDatabase(app);
+  const refdb = ref(db, 'wholesalers/');
 
 var dahsboardlink = document.getElementById("dashboard");
-var company_name = document.getElementById("company_name");
-var trade_name = document.getElementById("trade_name");
-var salute = document.getElementById("salute");
-var signee_family_name = document.getElementById("signee_family_name");
-var signee_name = document.getElementById("signee_name");
-var signee_id_number = document.getElementById("signee_id_number");
-var fuel_supplier = document.getElementById("fuel_supplier");
-var oil_company_brand = document.getElementById("oil_company_brand");
-var hdsa_ownership_percentage = document.getElementById("hdsa_ownership_percentage");
-var relationship = document.getElementById("relationship");
-var location_address = document.getElementById("location_address");
-var province = document.getElementById("province");
+
 var regfs = document.getElementById("regfs");
 
+
+
   regfs.addEventListener("click", function(event) {
+    console.log(company_name);
     event.preventDefault();
     //set(ref(db, 'users/' + userId)
-  set(ref(db, 'fillinfstations/'), {
+
+    var company_name = document.getElementById("company_name").value;
+var trade_name = document.getElementById("trade_name").value;
+var salute = document.getElementById("salute").value;
+var signee_family_name = document.getElementById("signee_family_name").value;
+var signee_name = document.getElementById("signee_name").value;
+var signee_id_number = document.getElementById("signee_id_number").value;
+var storage_capacity = document.getElementById("storage_capacity").value;
+var wholesale_licence_number = document.getElementById("wholesale_licence_number").value;
+var hdsa_ownership_percentage = document.getElementById("hdsa_ownership_percentage").value;
+var postal_address = document.getElementById("postal_address").value;
+var postal_code = document.getElementById("postal_code").value;
+var business_tel = document.getElementById("business_tel").value;
+var mobile_phone = document.getElementById("mobile_phone").value;
+var email_address = document.getElementById("email_address").value;
+var registration_number = document.getElementById("registration_number").value;
+
+
+  var fsData = {
     company_name: company_name,
     trade_name: trade_name,
     salute: salute,
     signee_family_name: signee_family_name,
     signee_name: signee_name,
     signee_id_number: signee_id_number,
-    fuel_supplier: fuel_supplier,
+    storage_capacity: storage_capacity,
     oil_company_brand: oil_company_brand,
     hdsa_ownership_percentage: hdsa_ownership_percentage,
-    relationship: relationship,
-    location_address: location_address,
-    province: province
-  })
-  .then(() => {
-    console.log("Data saved successfully!");
-  })
-  .catch((error) => {
-    console.error("Error writing data: ", error);
-  });
+    postal_address: postal_address,
+    postal_code: postal_code,
+    business_tel: business_tel,
+    mobile_phone: mobile_phone,
+    site_licence_number: site_licence_number,
+    email_address: email_address,
+    retail_licence_number: retail_licence_number,
+    registration_number: registration_number
+
+};
+
+
+push(refdb, fsData)
+    .then(() => {
+      console.log('Data has been written successfully!');
+      window.location.href = `./mywholesalers.html`;
+    })
+    .catch((error) => {
+      console.error('Error writing data: ', error);
+    });
      });
 
 
@@ -2254,6 +2359,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Close dropdown when clicking outside ---
   document.addEventListener('click', (event) => {
+    const customSelectWrapper = document.querySelector('.custom-select-wrapper');
     if (!customSelectWrapper.contains(event.target)) {
       if (customButton.getAttribute('aria-expanded') === 'true') {
         customButton.setAttribute('aria-expanded', 'false');
@@ -2372,6 +2478,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Close dropdown when clicking outside ---
   document.addEventListener('click', (event) => {
+    const customSelectWrapper = document.querySelector('.custom-select-wrapper1');
     if (!customSelectWrapper.contains(event.target)) {
       if (customButton.getAttribute('aria-expanded') === 'true') {
         customButton.setAttribute('aria-expanded', 'false');
@@ -2408,6 +2515,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+    onValue(refdb, (snapshot) => {
+        // The snapshot contains the data at the specified path
+        const data = snapshot.val();
+
+        if (data) {
+            // If the data is an object (common for lists of items),
+            // you can get the number of items by counting its keys.
+            const numberOfItems = Object.keys(data).length;
+            console.log("Number of items:", numberOfItems);
+        } else {
+            console.log("No items found at this location.");
+        }
+    });
 </script>
     </body>
     <wordtune-app-toolbar data-wxt-shadow-root="" style="direction: ltr;">
