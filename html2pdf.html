@@ -4091,8 +4091,6 @@ push(refdb, fsData)
   
     const element = document.getElementById('pdf-content');
 
-    console.log("here is the element which you seek " + element);
-
     const opt = {
       margin:       10,                   // mm
       filename:     `DMRE FORM - ${childDatasnapshot.stationname} - ${currentYear}.pdf`,
@@ -4105,7 +4103,7 @@ push(refdb, fsData)
     html2pdf().set(opt).from(element).save();
 
 
-            //window.location.href = `./declaration.html?datatoken=${paramValue}`;
+            window.location.href = `./declaration.html?datatoken=${paramValue}`;
         } else if (childDatasnapshot.training === "Training Conducted"){
             // Core conversion function
   
