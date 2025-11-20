@@ -2135,6 +2135,7 @@
 <input type="hidden" id="relationship">
 <input type="hidden" id="registration_number">
 <input type="hidden" id="address">
+<input type="hidden" id="rln">
 
 
 
@@ -2241,6 +2242,7 @@ var hdsaownership = document.getElementById("hdsaownership").value;
 var relationship = document.getElementById("relationship").value;
 var registration_number = document.getElementById("registration_number").value;
 var address = document.getElementById("address").value;
+var rln = document.getElementById("rln").value;
 
 
 
@@ -2277,7 +2279,8 @@ var address = document.getElementById("address").value;
     hdsaownership: hdsaownership,
     relationship: relationship,
     registration_number: registration_number,
-    address: address
+    address: address,
+    retail_licence_number : rln
 
 };
 
@@ -2404,6 +2407,8 @@ snapshot.forEach((childSnapshot) => {
         document.getElementById("hdsaownership").value = childData.hdsa_ownership_percentage;
         document.getElementById("relationship").value = childData.relationship;
 document.getElementById("registration_number").value = childData.registration_number;
+document.getElementById("address").value = childData.postal_address;
+document.getElementById("rln").value = childData.retail_licence_number;
 
 
   });
