@@ -2285,7 +2285,7 @@ var address = document.getElementById("address").value;
 push(refdb, fsData)
     .then((ref) => {
       console.log('Data has been written successfully!');
-      const newKey = newPostRef.key;
+      const newKey = ref.key;
       window.location.href = `./html2pdf.html?ar=${newKey}`;
     })
     .catch((error) => {
