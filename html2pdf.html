@@ -4106,7 +4106,7 @@ uploadTask.on("state_changed", (snapshot) => {
       console.error("Upload failed:", error);
     },
     () => {
-      uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+      uploadTask.snapshot.Sref.getDownloadURL().then((url) => {
         console.log("PDF uploaded! URL:", url);
         window.location.href = `./declaration.html?datatoken=${paramValue}`;
       });
