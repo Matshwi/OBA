@@ -4090,9 +4090,10 @@ push(refdb, fsData)
         // Core conversion function
   
     const element = document.getElementById('pdf-content');
+    console.log(element);
 
     const opt = {
-      margin:       10,                   // mm
+      margin:       5,                   // mm
       filename:     `DMRE FORM - ${childDatasnapshot.stationname} - ${currentYear}.pdf`,
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 2, useCORS: true, allowTaint: false },
@@ -4103,7 +4104,7 @@ push(refdb, fsData)
     html2pdf().set(opt).from(element).save();
 
 
-            window.location.href = `./declaration.html?datatoken=${paramValue}`;
+// window.location.href = `./declaration.html?datatoken=${paramValue}`;
         } else if (childDatasnapshot.training === "Training Conducted"){
             // Core conversion function
   
@@ -4123,7 +4124,7 @@ push(refdb, fsData)
     html2pdf().set(opt).from(element).save();
 
 
-            window.location.href = window.location.href = `./declaration.html?datatoken=${paramValue}`;
+           // window.location.href = window.location.href = `./declaration.html?datatoken=${paramValue}`;
         }
 
     
