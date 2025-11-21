@@ -2181,16 +2181,24 @@ uploadTask.on("state_changed", (snapshot) => {
     const progress =
       (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log("Upload is " + progress + "% done");
+    },
+    (error) => {
+      console.error("Upload failed:", error);
+    },
+    () => {
+      uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+        console.log("PDF uploaded! URL:", url);
+        window.location.href = `./annualreturns.html`;
+      });
 });
 
 
 
  /*     const uploadTask = storageRef.put(blobPDF);
 
-  uploadTask.on(
-    "state_changed",
-    (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  uploadTask.on("state_changed",(snapshot) => {
+      const progress = 
+      (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       console.log("Upload is " + Math.round(progress) + "% done");
     },
     (error) => {
@@ -2204,7 +2212,7 @@ uploadTask.on("state_changed", (snapshot) => {
   );*/
 
 
-window.location.href = `./annualreturns.html`;
+
         
 }
 
