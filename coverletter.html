@@ -2179,7 +2179,7 @@ async function loadData() {
 
 uploadTask.on("state_changed", (snapshot) => {
     const progress =
-      (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      await (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log("Upload is " + progress + "% done");
     window.location.href = `./annualreturns.html`;
     
