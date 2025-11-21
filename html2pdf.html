@@ -2236,7 +2236,7 @@ SA COAT<br>OF ARMS
                                         </div>
                                         <div class="page-number">i</div>
                                     </div>
-                                    <div class="page-break"></div>
+                                    
                                     <div class="page-section" style="border-top: 2px solid black;">
                                         <div style="padding: 12px 16px;">
                                             <div style="font-weight: bold; font-size: 9.5px; margin-bottom: 8px;">SECTION 2: COMPLETE IF THERE IS A CHANGE IN LICENSEE'S PARTICULARS</div>
@@ -2659,7 +2659,7 @@ SA COAT<br>OF ARMS
                                         </div>
                                         <div class="page-number">ii</div>
                                     </div>
-<div class="page-break"></div>
+
 <div class="page-section" style="border-top: 2px solid black;">
 <div style="padding: 12px 16px;">
 <div style="font-weight: bold; font-size: 9.5px; margin-bottom: 8px;">SECTION 3: INFORMATION TO BE COMPLETED IN RESPECT OF ANNUAL INFORMATION SUBMISSION</div>
@@ -3141,7 +3141,7 @@ SA COAT<br>OF ARMS
                                         </div>
 <div class="page-number">iii</div>
                                     </div>
-<div class="page-break"></div>
+
 <div class="page-section" style="border-top: 2px solid black;">
 <div style="padding: 12px 16px;">
 <div style="font-size: 8px; margin-bottom: 8px;">INDICATE NUMBER OF EMPLOYEES BY RACE, GENDER AND DISABILITY</div>
@@ -3356,7 +3356,7 @@ SA COAT<br>OF ARMS
                                         </div>
                                         <div class="page-number">iv</div>
                                     </div>
-                                    <div class="page-break"></div>
+                                    
                                     <div class="page-section" style="border-top: 2px solid black;">
                                         <div style="padding: 12px 16px;">
                                             <div style="font-size: 9.5px; font-weight: bold; text-align: center; text-decoration: underline; margin-bottom: 12px;">DOCUMENTS TO BE ATTACHED TO THE SUBMISSION OF ANNUAL INFORMATION FORM</div>
@@ -3379,7 +3379,7 @@ SA COAT<br>OF ARMS
                                         </div>
                                         <div class="page-number">v</div>
                                     </div>
-                                    <div class="page-break"></div>
+                                    
                                     <div class="page-section" style="border-top: 2px solid black;">
                                         <div style="padding: 12px 16px;">
                                             <div style="font-size: 12px; font-weight: bold; margin-bottom: 8px;">DECLARATION</div>
@@ -3410,7 +3410,7 @@ SA COAT<br>OF ARMS
                                         </div>
                                         <div class="page-number">vi</div>
                                     </div>
-                                    <div class="page-break"></div>
+                                    
                                     <div style="border-top: 2px solid black;">
                                         <div style="padding: 12px 16px;">
                                             <div style="font-size: 8.5px; margin-bottom: 10px; line-height: 1.4;">
@@ -4078,7 +4078,8 @@ push(refdb, fsData)
         // Core conversion function
   
     const element = document.getElementById('pdf-content');
-    console.log(element);
+    
+    const currentYear = new Date().getFullYear();
 
     const opt = {
       margin:       5,                   // mm
