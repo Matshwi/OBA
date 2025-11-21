@@ -14,7 +14,7 @@
   import { getDatabase, set, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
 
 
-  import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
+  import { getStorage, ref as Sref, uploadBytes, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
 
 
   // TODO: Add SDKs for Firebase products that you want to use
@@ -43,7 +43,7 @@
   const ownership = urlParams.get('ownership');
   const datatoken = urlParams.get('datatoken');
   const refdb = ref(db, `AnnualReturns/${datatoken}`);
-  const storageRef = ref(storage, `AnnualReturns/${datatoken}`);
+  const storageRef = Sref(storage, `AnnualReturns/${datatoken}`);
 
 console.log("hey im here " + refdb);
 
@@ -112,7 +112,16 @@ async function loadData() {
 
     const blobPDF = await html2pdf().set(opt).from(element).outputPdf("blob");
 
-      const uploadTask = storageRef.put(blobPDF);
+    const uploadTask = uploadBytesResumable(storageRef, blobPDF);
+
+uploadTask.on("state_changed", (snapshot) => {
+    const progress =
+      (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log("Upload is " + progress + "% done");
+});
+
+
+   /*   const uploadTask = storageRef.put(blobPDF);
 
   uploadTask.on(
     "state_changed",
@@ -128,7 +137,7 @@ async function loadData() {
         console.log("PDF uploaded! URL:", url);
       });
     }
-  );
+  );*/
 
 
             window.location.href = `./coverletter.html?datatoken=${datatoken}`; 
