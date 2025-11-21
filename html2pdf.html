@@ -3576,7 +3576,7 @@ SA COAT<br>OF ARMS
   const urlParams = new URLSearchParams(queryString);
   const paramValue = urlParams.get('ar');
 
-  const storageRef = Sref(storage, `AnnualReturns/${paramValue}`);
+  const storageRef = Sref(storage, `AnnualReturns/${paramValue}/`);
 
 
   const refdb = ref(db, `AnnualReturns/${paramValue}`);
@@ -4109,15 +4109,12 @@ push(refdb, fsData)
       console.error("Upload failed:", error);
     },
     () => {
-      uploadTask.snapshot.ref.getDownloadURL().then((url) => {
-        console.log("PDF uploaded! URL:", url);
-      });
+      window.location.href = `./declaration.html?datatoken=${paramValue}`;
     }
   );
 
 
-//window.location.href = `./declaration.html?datatoken=${paramValue}`;
- 
+
 }
     
    
