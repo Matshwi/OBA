@@ -3550,7 +3550,7 @@ SA COAT<br>OF ARMS
 
   import { getDatabase, set, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
 
-  import { getStorage, uploadBytes, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
+  import { getStorage, ref as Sref, uploadBytes, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -3576,10 +3576,7 @@ SA COAT<br>OF ARMS
   const urlParams = new URLSearchParams(queryString);
   const paramValue = urlParams.get('ar');
 
-  console.log(`this is a db result ${db}`);
-  console.log(`this is a storage result ${storage}`);
-
-  const storageRef = ref(storage, `AnnualReturns/${paramValue}`);
+  const storageRef = Sref(storage, `AnnualReturns/${paramValue}`);
 
 
   const refdb = ref(db, `AnnualReturns/${paramValue}`);
