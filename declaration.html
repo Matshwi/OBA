@@ -12,6 +12,11 @@
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
 
   import { getDatabase, set, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+
+
+  import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
+
+
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,11 +37,13 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const db = getDatabase(app);
+  const storage = getStorage(app);
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const ownership = urlParams.get('ownership');
   const datatoken = urlParams.get('datatoken');
   const refdb = ref(db, `AnnualReturns/${datatoken}`);
+  const storageRef = ref(storage, `AnnualReturns/${datatoken}`);
 
 console.log("hey im here " + refdb);
 
@@ -84,12 +91,14 @@ console.log("hey im here " + refdb);
 
        		}
 
-       const currentYear = new Date().getFullYear();
-
+       
+const currentYear = new Date().getFullYear();
 document.getElementById("yearofsigning").innerHTML = `${currentYear}, and that the provisions of the Regulations contained in Government Gazette Number R1648 of 19`;
 
-    const element = document.getElementById('pdf-content');
+async function loadData() {
 
+    const element = document.getElementById('pdf-content');
+    
     const opt = {
       margin:       10,                   // mm
       filename:     `Declaration - ${stationnamear} - ${currentYear}.pdf`,
@@ -99,12 +108,34 @@ document.getElementById("yearofsigning").innerHTML = `${currentYear}, and that t
     };
 
     // Start conversion
-    html2pdf().set(opt).from(element).save();
+    await html2pdf().set(opt).from(element).save();
+
+    const blobPDF = await html2pdf().set(opt).from(element).outputPdf("blob");
+
+      const uploadTask = storageRef.put(blobPDF);
+
+  uploadTask.on(
+    "state_changed",
+    (snapshot) => {
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log("Upload is " + Math.round(progress) + "% done");
+    },
+    (error) => {
+      console.error("Upload failed:", error);
+    },
+    () => {
+      uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+        console.log("PDF uploaded! URL:", url);
+      });
+    }
+  );
 
 
-            window.location.href = window.location.href = `./coverletter.html?datatoken=${datatoken}`; 
+            window.location.href = `./coverletter.html?datatoken=${datatoken}`; 
 
+}
 
+loadData();
             const numberOfItems = Object.keys(data).length;
             console.log("Number of items:", numberOfItems);
         } else {

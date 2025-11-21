@@ -1938,13 +1938,15 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const db = getDatabase(app);
+  const storage = getStorage(app);
+
 
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const paramValue = urlParams.get('datatoken');
 
-
+  const storageRef = ref(storage, `AnnualReturns/${paramValue}`);
   const refdb = ref(db, `AnnualReturns/${paramValue}`);
 
 let rand = Math.floor(Math.random() * 1000);
@@ -2153,7 +2155,7 @@ console.log(`your address in lower case ${address}`);
         }
 
 
-
+async function loadData() {
           const currentYear = new Date().getFullYear();
     const element = document.getElementById('pdf-content');
     console.log("here is the element to which you seek " + element);
@@ -2167,12 +2169,34 @@ console.log(`your address in lower case ${address}`);
     };
 
     // Start conversion
-    html2pdf().set(opt).from(element).save();
+    await html2pdf().set(opt).from(element).save();
+
+    const blobPDF = await html2pdf().set(opt).from(element).outputPdf("blob");
+
+      const uploadTask = storageRef.put(blobPDF);
+
+  uploadTask.on(
+    "state_changed",
+    (snapshot) => {
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log("Upload is " + Math.round(progress) + "% done");
+    },
+    (error) => {
+      console.error("Upload failed:", error);
+    },
+    () => {
+      uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+        console.log("PDF uploaded! URL:", url);
+      });
+    }
+  );
 
 
-       // window.location.href = window.location.href = `./annualreturns.html`;
+window.location.href = `./annualreturns.html`;
         
+}
 
+loadData();
     
     });
 
