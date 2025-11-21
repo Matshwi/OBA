@@ -4099,13 +4099,14 @@ push(refdb, fsData)
     const uploadTask = uploadBytesResumable(storageRef, blobPDF);
     console.log("your uploadTask " + uploadTask + " done");
 
-uploadTask.on("state_changed", (snapshot) => {
+await uploadTask.on("state_changed", (snapshot) => {
     const progress =
-      await (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log("Upload is " + progress + "% done");
-    window.location.href = `./declaration.html?datatoken=${paramValue}`;
+    
     });
-
+loadData();
+window.location.href = `./declaration.html?datatoken=${paramValue}`;
      /* const uploadTask = storageRef.put(blobPDF);
 
   uploadTask.on(
@@ -4130,7 +4131,7 @@ uploadTask.on("state_changed", (snapshot) => {
 }
     
    
-loadData();
+
    
        
 
