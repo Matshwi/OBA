@@ -4095,9 +4095,9 @@ push(refdb, fsData)
 
     const blobPDF = await html2pdf().set(opt).from(element).outputPdf("blob");
 
-    
 
-      const uploadTask = storageRef.put(blobPDF);
+
+    const uploadTask = uploadBytesResumable(storageRef, blobPDF);
 
   uploadTask.on(
     "state_changed",
