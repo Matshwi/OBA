@@ -3576,6 +3576,9 @@ SA COAT<br>OF ARMS
   const urlParams = new URLSearchParams(queryString);
   const paramValue = urlParams.get('ar');
 
+  console.log(`this is a db result ${db}`);
+  console.log(`this is a storage result ${storage}`);
+
   const storageRef = ref(storage, `AnnualReturns/${paramValue}`);
 
 
