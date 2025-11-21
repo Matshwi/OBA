@@ -3576,7 +3576,7 @@ SA COAT<br>OF ARMS
   const urlParams = new URLSearchParams(queryString);
   const paramValue = urlParams.get('ar');
 
-  const storageRef = Sref(storage, `AnnualReturns/${paramValue}/`);
+ 
 
 
   const refdb = ref(db, `AnnualReturns/${paramValue}`);
@@ -4095,9 +4095,13 @@ push(refdb, fsData)
 
     const blobPDF = await html2pdf().set(opt).from(element).outputPdf("blob");
 
+    const filenamedmre = `DMRE FORM - ${childDatasnapshot.stationname} - ${currentYear}.pdf`;
+
+const storageRef = Sref(storage, `AnnualReturns/${paramValue}/${filenamedmre}`);
 
 
-    const uploadTask = uploadBytesResumable(storageRef, blobPDF);
+const uploadTask = uploadBytesResumable(storageRef, blobPDF);
+
 
   uploadTask.on(
     "state_changed",
@@ -4112,6 +4116,31 @@ push(refdb, fsData)
       window.location.href = `./declaration.html?datatoken=${paramValue}`;
     }
   );
+
+
+
+
+
+
+
+/*
+// Create custom filename
+const currentYear = new Date().getFullYear();
+const fileName = `DMRE FORM - ${childDatasnapshot.stationname} - ${currentYear}.pdf`;
+const storageRef = ref(storage, `dmre_forms/${fileName}`);
+
+// Convert html2pdf to Blob
+const element = document.getElementById('pdf-content');
+
+html2pdf()
+  .from(element)
+  .outputPdf('blob')
+  .then((pdfBlob) => {
+      // Upload to storage
+      uploadBytes(storageRef, pdfBlob).then((snapshot) => {
+          console.log("Uploaded:", fileName);
+      });
+  });*/
 
 
 

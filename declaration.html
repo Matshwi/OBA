@@ -43,7 +43,7 @@
   const ownership = urlParams.get('ownership');
   const datatoken = urlParams.get('datatoken');
   const refdb = ref(db, `AnnualReturns/${datatoken}`);
-  const storageRef = Sref(storage, `AnnualReturns/${datatoken}`);
+  
 
 console.log("hey im here " + refdb);
 
@@ -112,19 +112,12 @@ async function loadData() {
 
     const blobPDF = await html2pdf().set(opt).from(element).outputPdf("blob");
 
+    const filenamedeclaration = `Declaration - ${stationnamear} - ${currentYear}.pdf`;
+
+    const storageRef = Sref(storage, `AnnualReturns/${datatoken}/${filenamedeclaration}`);
+
     const uploadTask = uploadBytesResumable(storageRef, blobPDF);
 
-uploadTask.on("state_changed", (snapshot) => {
-    const progress =
-      await (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    console.log("Upload is " + progress + "% done");
-    window.location.href = `./coverletter.html?datatoken=${datatoken}`; 
-  
-    }
-);
-
-
-   /*   const uploadTask = storageRef.put(blobPDF);
 
   uploadTask.on(
     "state_changed",
@@ -136,11 +129,9 @@ uploadTask.on("state_changed", (snapshot) => {
       console.error("Upload failed:", error);
     },
     () => {
-      uploadTask.snapshot.ref.getDownloadURL().then((url) => {
-        console.log("PDF uploaded! URL:", url);
-      });
+     window.location.href = `./coverletter.html?datatoken=${datatoken}`; 
     }
-  );*/
+  );
 
 
             
