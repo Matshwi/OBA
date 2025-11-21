@@ -2019,12 +2019,12 @@ document.getElementById("ownershipstatus").innerHTML = `Declaration: No Change i
       document.getElementById('rln').innerHTML = childDatasnapshot.retail_licence_number;
 
 
-      const address = childDatasnapshot.address;
+      const address = childDatasnapshot.address.toLowerCase();;
 
       console.log(`your address ${address}`);
 
     function getProvinceFromAddress(address) {
-    address = address.toLowerCase();
+  
 console.log(`your address in lower case ${address}`);
     const provinces = {
         "gauteng": ["johannesburg", "pretoria", "midrand", "soweto", "kempton", "centurion", "benoni"],
