@@ -4074,10 +4074,12 @@ push(refdb, fsData)
         // Core conversion function
   
     const element = document.getElementById('pdf-content');
-    
-   
 
-    const opt = {
+
+
+    async function loadData() {
+
+         const opt = {
       margin:       5,                   // mm
       filename:     `DMRE FORM - ${childDatasnapshot.stationname}.pdf`,
       image:        { type: 'jpeg', quality: 0.98 },
@@ -4086,10 +4088,16 @@ push(refdb, fsData)
     };
 
     // Start conversion
-    html2pdf().set(opt).from(element).save();
+    await html2pdf().set(opt).from(element).save();
 
 
 window.location.href = `./declaration.html?datatoken=${paramValue}`;
+ 
+}
+    
+   
+loadData();
+   
        
 
     
