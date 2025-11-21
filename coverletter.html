@@ -1918,6 +1918,8 @@
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
 
   import { getDatabase, set, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+
+  import { getStorage, ref as Sref, uploadBytes, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -1946,7 +1948,7 @@
   const urlParams = new URLSearchParams(queryString);
   const paramValue = urlParams.get('datatoken');
 
-  const storageRef = ref(storage, `AnnualReturns/${paramValue}`);
+  const storageRef = Sref(storage, `AnnualReturns/${paramValue}`);
   const refdb = ref(db, `AnnualReturns/${paramValue}`);
 
 let rand = Math.floor(Math.random() * 1000);
