@@ -4107,7 +4107,7 @@ uploadTask.on("state_changed", (snapshot) => {
     },
     () => {
       uploadTask.snapshot.ref.getDownloadURL().then((url) => {
-        await console.log("PDF uploaded! URL:", url);
+        console.log("PDF uploaded! URL:", url);
         window.location.href = `./declaration.html?datatoken=${paramValue}`;
       });
 });
