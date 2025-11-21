@@ -2019,13 +2019,13 @@ document.getElementById("ownershipstatus").innerHTML = `Declaration: No Change i
       document.getElementById('rln').innerHTML = childDatasnapshot.retail_licence_number;
 
 
-      const address = childDatasnapshot.address.toLowerCase();;
+      
 
-      console.log(`your address ${address}`);
 
-    function getProvinceFromAddress(address) {
-  
-console.log(`your address in lower case ${address}`);
+
+
+  const address = childDatasnapshot.address.toLowerCase();
+console.log(`your address in lower case`);
     const provinces = {
         "gauteng": ["johannesburg", "pretoria", "midrand", "soweto", "kempton", "centurion", "benoni"],
         "western cape": ["cape town", "stellenbosch", "paarl", "bellville", "parow", "somerset west", "mitchells plain"],
@@ -2136,7 +2136,7 @@ console.log(`your address in lower case ${address}`);
     }
 
     //return "Province not found";
-}
+
 
 
 //getProvinceFromAddress(address);
