@@ -10,9 +10,7 @@
   </title>
         <script crossorigin="" src="./PetroCompliance - sar_files/index-CqQWK0c_.js" type="module"></script>
         <link crossorigin="" href="./PetroCompliance - sar_files/index-Bwue-oE7.css" rel="stylesheet">
-        <style>
-            
-        </style>
+
         <style type="text/css">
             [data-sonner-toaster][dir=ltr],html[dir=ltr] {
                 --toast-icon-margin-start: -3px;
@@ -2170,6 +2168,139 @@
         </div>
 
         <script type="module">
+
+import { createClient } from "https://esm.sh/@supabase/supabase-js";
+
+const supabaseUrl = "https://bhzutkztpztbdeniggyv.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJoenV0a3p0cHp0YmRlbmlnZ3l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0OTQ2MDEsImV4cCI6MjA4MTA3MDYwMX0.skUpRXt7SNLV-c1o-jRcriJY6sd4ZoJwagELp-q6ES8";
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+
+
+var regfs = document.getElementById("sarbtn");
+
+  regfs.addEventListener("click", async function(event) {
+
+var stationtype = document.getElementById("stationtype").value;
+var stationname = document.getElementById("stationname").value;
+var year = document.getElementById("year").value;
+var training = document.getElementById("training").value;
+var ownership = document.getElementById("ownership").value;
+var petrol_volume = document.getElementById("petrol_volume").value;
+var diesel_volume = document.getElementById("diesel_volume").value;
+var paraffin_volume = document.getElementById("paraffin_volume").value;
+var blackmale = document.getElementById("blackmale").value;
+var blackfemale = document.getElementById("blackfemale").value;
+var blackdis = document.getElementById("blackdis").value;
+var colouredmale = document.getElementById("colouredmale").value;
+var colouredfemale = document.getElementById("colouredfemale").value;
+var coloureddis = document.getElementById("coloureddis").value;
+var indianmale = document.getElementById("indianmale").value;
+var indianfemale = document.getElementById("indianfemale").value;
+var indiandis = document.getElementById("indiandis").value;
+var whitemale = document.getElementById("whitemale").value;
+var whitefemale = document.getElementById("whitefemale").value;
+var whitedis = document.getElementById("whitedis").value;
+var companyname = document.getElementById("companyname").value;
+var title = document.getElementById("title").value;
+var name = document.getElementById("name").value;
+var surname = document.getElementById("surname").value;
+var idnum = document.getElementById("idnum").value;
+var fuelsupplier = document.getElementById("fuelsupplier").value;
+var branded = document.getElementById("branded").value;
+var hdsaownership = document.getElementById("hdsaownership").value;
+var relationship = document.getElementById("relationship").value;
+var registration_number = document.getElementById("registration_number").value;
+var address = document.getElementById("address").value;
+var rln = document.getElementById("rln").value;
+
+  const { data, error } = await supabase.from("AnnualReturns").insert([
+      {
+    stationtype: stationtype,
+    stationname: stationname,
+    year: year,
+    training: training,
+    ownership: ownership,
+    petrol_volume: petrol_volume,
+    diesel_volume: diesel_volume,
+    paraffin_volume: paraffin_volume,
+    blackmale: blackmale,
+    blackfemale: blackfemale,
+    blackdis: blackdis,
+    colouredmale: colouredmale,
+    colouredfemale: colouredfemale,
+    coloureddis: coloureddis,
+    indianmale: indianmale,
+    indianfemale: indianfemale,
+    indiandis: indiandis,
+    whitemale: whitemale,
+    whitefemale: whitefemale,
+    whitedis: whitedis,
+    companyname: companyname,
+    title: title,
+    name: name,
+    surname: surname,
+    idnum: idnum,
+    fuelsupplier: fuelsupplier,
+    branded: branded,
+    hdsaownership: hdsaownership,
+    relationship: relationship,
+    registration_number: registration_number,
+    address: address,
+    retail_licence_number : rln
+      }
+    ]);
+
+  if (error) {
+    console.error("Insert error:", error);
+  } else {
+    console.log("Data saved successfully!");
+    window.location.href = `./myfillingstations.html`;
+  }
+
+
+  })
+
+    
+ var stationchosen = document.getElementById("stationtype");
+
+stationchosen.addEventListener('change', async function() {
+        // Code to execute when the value changes
+        const selectedValue = this.value; // 'this' refers to the select element
+
+        const { data, error } = await supabase.from("filling_stations").select("*")
+
+        console.log("changed " + selectedValue);
+
+       await data.forEach((snapdata, index) => {
+if (selectedValue === "Filling station") {
+
+ // filter
+
+ console.log("changed and we are in");
+ console.log(snapdata);
+
+
+      document.getElementById("stationname").innerHTML += `
+                <option value="${snapdata.trade_name}" style="background-color: white;color: black;padding: 5px;">${snapdata.trade_name}</option>
+        `;
+
+} else if(selectedValue === "Wholsaler"){
+     document.getElementById("stationname").innerHTML += `
+                <option value="${snapdata.trade_name}" style="background-color: white;color: black;padding: 5px;">${snapdata.trade_name}</option>
+        `;
+ 
+}
+
+})
+
+});
+            
+
+        </script>
+
+        <!--<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
@@ -2416,7 +2547,7 @@ document.getElementById("rln").value = childData.retail_licence_number;
     });
 
 
-</script>
+</script>-->
     </body>
     <wordtune-app-toolbar data-wxt-shadow-root="" style="direction: ltr;">
         <template shadowrootmode="open">
